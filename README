@@ -1,0 +1,102 @@
+/**********************************************************
+* HW3: Metro Simulator
+* Comp 15
+* README
+* Sam Lacet-Brown
+* October 2020
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make MetroSim
+     - run executable with
+            ./MetroSim stationsFile outputFile [commandFile]
+
+
+Program Purpose:
+This homework assignment handles a running train to accomodate
+passengers arriving/departing a metro. Learn how to design and
+modularize code and work with documented libraries.
+
+
+Acknowledgements: 
+I used the vector resource posted on Piazza to help with my list and the
+I/O file from the CS site to review how to read in files. I also talked
+with Micheal Turner about redirecting output to a file. 
+
+Files: 
+README: this file
+
+Makefile
+
+main.cpp:
+     Handles simple driver functions including reading in files and
+     initalizing an instance of the Metro.
+
+MetroSim.cpp:
+     Implementation of MetroSim class.  Main
+     functionality of running the Metro Simulation, can receive commands,
+     move trains, and tracks/manages passengers going on/off the train.
+
+MetroSim.h:
+        Interface of MetroSim class.
+
+Passenger.cpp:
+     Implementation of Passenger class.  [xxx]
+
+Passenger.h:
+        Interface of Passenger class.
+
+PassengerQueue.cpp:
+     Implementation of PassengerQueue class. [xxx]
+
+PassengerQueue.h:
+        Interface of PassengerQueue class.
+
+Station.cpp:
+     Implementation of Station class.  [xxx]
+
+Station.h:
+        Interface of Station class.
+
+stations.txt:
+        An example file containing a list of stations.
+
+test_commands.txt:
+        A sample list of commands to test the simulator
+
+test_commands2.txt:
+        A second list of testing commands
+
+the_metroSim:
+        reference implementation for students to see how 
+        the program should handle all cases.
+
+output1.txt: My program's list of exiting Passengers
+
+output2.txt: The reference list of exiting Passengers
+
+output3.txt: My program's redirected cout data
+
+output4.txt: The reference redirected cout data
+
+Data Structures:
+The primary data structures in this assignment were queues
+which  were implemented using vectors. These allowed for passengers to
+be added to the end as they entered the station and removed as
+they got on the train.
+
+Testing:
+I had a lot of trouble with trainAt vs last(trainAt) and making sure that
+nothing got confused with the 0th indexed code vs 1 based user interface.
+I tested primarily by adding lots of people to station 2 and then running
+m m, and for edge cases I simply reduced my list of stations down to three
+in order to easily see and test what happens once the train reaches the
+last stop. I also made a second test file to test file-based input more
+clearly, as the original file had too many commands for me to follow
+the output of both versions at each step. Before testing any files,
+however, I checked that my PassengerQueue was functional. Once this
+worked, I tried making a Station and having it create queues for each
+station. Next I worked on getting input be read properly. After that,
+I started testing with the files and once the small test worked, I
+worked on  getting output to a file and checking my work with diff.
