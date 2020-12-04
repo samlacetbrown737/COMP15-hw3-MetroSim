@@ -67,11 +67,7 @@ test_commands.txt:
 
 test_commands2.txt:
         A second list of testing commands
-
-the_metroSim:
-        reference implementation for students to see how 
-        the program should handle all cases.
-
+        
 output1.txt: My program's list of exiting Passengers
 
 output2.txt: The reference list of exiting Passengers
